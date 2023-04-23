@@ -6,6 +6,7 @@ import {
 } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import {
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -20,90 +21,93 @@ const LoginScreen = ({ navigation }) => {
   const [showpassword, setShowpassword] = useState(false);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.head1}>Sign In</Text>
-      <View style={styles.inputout}>
-        <AntDesign
-          name="user"
-          size={24}
-          color={emailfocus === true ? colors.text1 : colors.text2}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Email"
-          onFocus={() => {
-            setEmailfocus(true);
-            setPasswordfocus(false);
-            setShowpassword(false);
-          }}
-        />
-      </View>
-      <View style={styles.inputout}>
-        <MaterialCommunityIcons
-          name="lock-outline"
-          size={24}
-          color={passwordfocus === true ? colors.text1 : colors.text2}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          onFocus={() => {
-            setEmailfocus(false);
-            setPasswordfocus(true);
-          }}
-          secureTextEntry={showpassword === false ? true : false}
-        />
-        <Octicons
-          name={showpassword === false ? 'eye-closed' : 'eye'}
-          size={24}
-          color="black"
-          onPress={() => {
-            setShowpassword(!showpassword);
-          }}
-        />
-      </View>
-      <TouchableOpacity style={[btn1, { marginVertical: 10 }]}>
-        <Text
-          style={{
-            color: colors.col1,
-            fontSize: titles.btntxt,
-            fontWeight: 'bold',
-          }}
-        >
-          Sign in
-        </Text>
-      </TouchableOpacity>
-
-      <Text style={styles.forgot}>Forgot Password</Text>
-      <Text style={styles.or}>OR</Text>
-      <Text style={styles.gftxt}>Sign In With</Text>
-
-      <View style={styles.gf}>
-        <TouchableOpacity>
-          <View style={styles.gficon}>
-            <AntDesign name="google" size={24} color="#EA4335" />
-          </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.head1}>Sign In</Text>
+        <View style={styles.inputout}>
+          <AntDesign
+            name="user"
+            size={24}
+            color={emailfocus === true ? colors.text1 : colors.text2}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            keyboardType="email-address"
+            onFocus={() => {
+              setEmailfocus(true);
+              setPasswordfocus(false);
+              setShowpassword(false);
+            }}
+          />
+        </View>
+        <View style={styles.inputout}>
+          <MaterialCommunityIcons
+            name="lock-outline"
+            size={24}
+            color={passwordfocus === true ? colors.text1 : colors.text2}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            onFocus={() => {
+              setEmailfocus(false);
+              setPasswordfocus(true);
+            }}
+            secureTextEntry={showpassword === false ? true : false}
+          />
+          <Octicons
+            name={showpassword === false ? 'eye-closed' : 'eye'}
+            size={24}
+            color={colors.text2}
+            onPress={() => {
+              setShowpassword(!showpassword);
+            }}
+          />
+        </View>
+        <TouchableOpacity style={[btn1, { marginVertical: 10 }]}>
+          <Text
+            style={{
+              color: colors.col1,
+              fontSize: titles.btntxt,
+              fontWeight: 'bold',
+            }}
+          >
+            Sign in
+          </Text>
         </TouchableOpacity>
-        <TouchableOpacity>
-          <View style={styles.gficon}>
-            <FontAwesome5 name="facebook-f" size={24} color="#4267B2" />
-          </View>
-        </TouchableOpacity>
-      </View>
 
-      <View style={hr80} />
+        <Text style={styles.forgot}>Forgot Password</Text>
+        <Text style={styles.or}>OR</Text>
+        <Text style={styles.gftxt}>Sign In With</Text>
 
-      <Text style={{ fontSize: 16 }}>
-        Don't have an account?
-        <Text
-          style={styles.signup}
-          onPress={() => navigation.navigate('Signup')}
-        >
-          {' '}
-          Sign Up
+        <View style={styles.gf}>
+          <TouchableOpacity>
+            <View style={styles.gficon}>
+              <AntDesign name="google" size={24} color="#EA4335" />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <View style={styles.gficon}>
+              <FontAwesome5 name="facebook-f" size={24} color="#4267B2" />
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={hr80} />
+
+        <Text style={{ fontSize: 16 }}>
+          Don't have an account?
+          <Text
+            style={styles.signup}
+            onPress={() => navigation.navigate('Signup')}
+          >
+            {' '}
+            Sign Up
+          </Text>
         </Text>
-      </Text>
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 
@@ -114,7 +118,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 70,
+    marginBottom: 70,
   },
   head1: {
     fontSize: titles.title1,
