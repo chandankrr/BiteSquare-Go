@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import { btn1, colors, hr80, titles } from '../../global/style';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   const [emailfocus, setEmailfocus] = useState(false);
   const [passwordfocus, setPasswordfocus] = useState(false);
   const [showpassword, setShowpassword] = useState(false);
@@ -95,7 +95,13 @@ const LoginScreen = () => {
 
       <Text style={{ fontSize: 16 }}>
         Don't have an account?
-        <Text style={styles.signup}> Sign Up</Text>
+        <Text
+          style={styles.signup}
+          onPress={() => navigation.navigate('Signup')}
+        >
+          {' '}
+          Sign Up
+        </Text>
       </Text>
     </View>
   );

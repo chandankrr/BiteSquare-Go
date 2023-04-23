@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import logo from '../../../assets/favicon.png';
 import { colors, hr80 } from '../../global/style';
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to BiteSquare Go</Text>
@@ -17,10 +17,10 @@ const WelcomeScreen = () => {
       <View style={hr80} />
 
       <View style={styles.btnout}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
           <Text style={styles.btn}>Sign Up</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
           <Text style={styles.btn}>Sign In</Text>
         </TouchableOpacity>
       </View>

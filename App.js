@@ -1,13 +1,8 @@
 import React from 'react';
-import LoginScreen from './src/screens/login/LoginScreen';
-import SignupScreen from './src/screens/signup/SignupScreen';
-import WelcomeScreen from './src/screens/welcome/WelcomeScreen';
+import RootNavigation from './src/RootNavigation';
 
 const App = () => {
-  return (
-    // <WelcomeScreen />
-    <LoginScreen />
-  );
+  return <RootNavigation />;
 };
 
 export default App;
