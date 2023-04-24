@@ -1,11 +1,19 @@
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import logo from '../../../assets/favicon.png';
 import { colors, hr80 } from '../../global/style';
 
 const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
+      <StatusBar barStyle={'default'} />
       <Text style={styles.title}>Welcome to BiteSquare Go</Text>
       <View style={styles.logoout}>
         <Image source={logo} style={styles.logo}></Image>

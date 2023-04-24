@@ -7,6 +7,7 @@ import {
 import React, { useState } from 'react';
 import {
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -23,6 +24,7 @@ const LoginScreen = ({ navigation }) => {
   return (
     <ScrollView>
       <View style={styles.container}>
+        <StatusBar barStyle={'default'} />
         <Text style={styles.head1}>Sign In</Text>
         <View style={styles.inputout}>
           <AntDesign
@@ -65,7 +67,10 @@ const LoginScreen = ({ navigation }) => {
             }}
           />
         </View>
-        <TouchableOpacity style={[btn1, { marginVertical: 10 }]}>
+        <TouchableOpacity
+          style={[btn1, { marginVertical: 10 }]}
+          onPress={() => navigation.navigate('Home')}
+        >
           <Text
             style={{
               color: colors.col1,

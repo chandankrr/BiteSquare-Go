@@ -2,6 +2,7 @@ export const colors = {
   col1: 'white',
   text1: 'red',
   text2: 'grey',
+  text3: 'black',
 };
 
 export const titles = {

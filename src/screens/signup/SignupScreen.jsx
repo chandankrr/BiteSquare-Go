@@ -7,6 +7,7 @@ import {
 import React, { useState } from 'react';
 import {
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -27,6 +28,7 @@ const SignupScreen = ({ navigation }) => {
   return (
     <ScrollView>
       <View style={styles.container}>
+        <StatusBar barStyle={'default'} />
         <Text style={styles.head1}>Sign Up</Text>
 
         {/* name start */}
