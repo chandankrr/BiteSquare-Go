@@ -1,6 +1,12 @@
 import { AntDesign } from '@expo/vector-icons';
 import React from 'react';
-import { StatusBar, StyleSheet, TextInput, View } from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  TextInput,
+  View,
+} from 'react-native';
 import Categories from '../../components/Categories';
 import HomeHeadNav from '../../components/HomeHeadNav';
 import OfferSlider from '../../components/OfferSlider';
@@ -8,8 +14,9 @@ import { colors } from '../../global/style';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={'default'} />
+    <SafeAreaView
+      style={[styles.container, { marginTop: StatusBar.currentHeight }]}
+    >
       <HomeHeadNav />
       <View style={styles.searchbox}>
         <AntDesign
@@ -22,7 +29,7 @@ const HomeScreen = () => {
       </View>
       <Categories />
       <OfferSlider />
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -37,7 +44,7 @@ const styles = StyleSheet.create({
   },
   searchbox: {
     flexDirection: 'row',
-    width: '90%',
+    width: '95%',
     backgroundColor: colors.col1,
     borderRadius: 30,
     alignItems: 'center',

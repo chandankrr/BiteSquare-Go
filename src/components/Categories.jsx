@@ -72,7 +72,7 @@ export default Categories;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.col1,
-    width: '90%',
+    width: '95%',
     elevation: 10,
     borderRadius: 10,
   },

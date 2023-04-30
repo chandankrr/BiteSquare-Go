@@ -46,8 +46,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: colors.col1,
     elevation: 20,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
   },
   containerin: {
     flexDirection: 'row',

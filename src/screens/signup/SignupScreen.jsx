@@ -6,8 +6,8 @@ import {
 } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import {
+  SafeAreaView,
   ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -27,8 +27,7 @@ const SignupScreen = ({ navigation }) => {
 
   return (
     <ScrollView>
-      <View style={styles.container}>
-        <StatusBar barStyle={'default'} />
+      <SafeAreaView style={[styles.container]}>
         <Text style={styles.head1}>Sign Up</Text>
 
         {/* name start */}
@@ -222,7 +221,7 @@ const SignupScreen = ({ navigation }) => {
             Sign In
           </Text>
         </Text>
-      </View>
+      </SafeAreaView>
     </ScrollView>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Image,
-  StatusBar,
+  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -12,8 +12,7 @@ import { colors, hr80 } from '../../global/style';
 
 const WelcomeScreen = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={'default'} />
+    <SafeAreaView style={[styles.container]}>
       <Text style={styles.title}>Welcome to BiteSquare Go</Text>
       <View style={styles.logoout}>
         <Image source={logo} style={styles.logo}></Image>
@@ -32,7 +31,7 @@ const WelcomeScreen = ({ navigation }) => {
           <Text style={styles.btn}>Sign In</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
