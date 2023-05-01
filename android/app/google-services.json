@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035647196911",
+    "project_id": "bitesquare-go",
+    "storage_bucket": "bitesquare-go.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035647196911:android:5f7d4a7bf5206d000e851a",
+        "android_client_info": {
+          "package_name": "com.chandankrr.BiteSquareGo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035647196911-c4bor91ehan7s4146hi2st7la17fnoma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8nmNTQVxoknuBB8c4FzUvnR0DWQLRKBI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035647196911-c4bor91ehan7s4146hi2st7la17fnoma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

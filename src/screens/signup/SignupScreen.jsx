@@ -8,6 +8,7 @@ import React, { useState } from 'react';
 import {
   SafeAreaView,
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   TextInput,
@@ -26,203 +27,206 @@ const SignupScreen = ({ navigation }) => {
   const [conPasswordFocus, setConPasswordFocus] = useState(false);
 
   return (
-    <ScrollView>
-      <SafeAreaView style={[styles.container]}>
-        <Text style={styles.head1}>Sign Up</Text>
+    <>
+      <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
+      <ScrollView>
+        <SafeAreaView style={[styles.container]}>
+          <Text style={styles.head1}>Sign Up</Text>
 
-        {/* name start */}
-        <View style={styles.inputout}>
-          <AntDesign
-            name="user"
-            size={24}
-            color={nameFocus === true ? colors.text1 : colors.text2}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Full Name"
-            onFocus={() => {
-              setNameFocus(true);
-              setEmailFocus(false);
-              setPhoneFocus(false);
-              setPasswordFocus(false);
-              setShowPassword(false);
-              setConPasswordFocus(false);
-              setShowConPassword(false);
-            }}
-          />
-        </View>
-        {/* name end */}
+          {/* name start */}
+          <View style={styles.inputout}>
+            <AntDesign
+              name="user"
+              size={24}
+              color={nameFocus === true ? colors.text1 : colors.text2}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Full Name"
+              onFocus={() => {
+                setNameFocus(true);
+                setEmailFocus(false);
+                setPhoneFocus(false);
+                setPasswordFocus(false);
+                setShowPassword(false);
+                setConPasswordFocus(false);
+                setShowConPassword(false);
+              }}
+            />
+          </View>
+          {/* name end */}
 
-        {/* email start */}
-        <View style={styles.inputout}>
-          <MaterialCommunityIcons
-            name="email-outline"
-            size={24}
-            color={emailFocus === true ? colors.text1 : colors.text2}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Email"
-            keyboardType="email-address"
-            onFocus={() => {
-              setNameFocus(false);
-              setEmailFocus(true);
-              setPhoneFocus(false);
-              setPasswordFocus(false);
-              setShowPassword(false);
-              setConPasswordFocus(false);
-              setShowConPassword(false);
-            }}
-          />
-        </View>
-        {/* email end */}
+          {/* email start */}
+          <View style={styles.inputout}>
+            <MaterialCommunityIcons
+              name="email-outline"
+              size={24}
+              color={emailFocus === true ? colors.text1 : colors.text2}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Email"
+              keyboardType="email-address"
+              onFocus={() => {
+                setNameFocus(false);
+                setEmailFocus(true);
+                setPhoneFocus(false);
+                setPasswordFocus(false);
+                setShowPassword(false);
+                setConPasswordFocus(false);
+                setShowConPassword(false);
+              }}
+            />
+          </View>
+          {/* email end */}
 
-        {/* phone start */}
-        <View style={styles.inputout}>
-          <AntDesign
-            name="phone"
-            size={24}
-            color={phoneFocus === true ? colors.text1 : colors.text2}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Phone Number"
-            keyboardType="numeric"
-            maxLength={10}
-            onFocus={() => {
-              setNameFocus(false);
-              setEmailFocus(false);
-              setPhoneFocus(true);
-              setPasswordFocus(false);
-              setShowPassword(false);
-              setConPasswordFocus(false);
-              setShowConPassword(false);
-            }}
-          />
-        </View>
-        {/* phone end */}
+          {/* phone start */}
+          <View style={styles.inputout}>
+            <AntDesign
+              name="phone"
+              size={24}
+              color={phoneFocus === true ? colors.text1 : colors.text2}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Phone Number"
+              keyboardType="numeric"
+              maxLength={10}
+              onFocus={() => {
+                setNameFocus(false);
+                setEmailFocus(false);
+                setPhoneFocus(true);
+                setPasswordFocus(false);
+                setShowPassword(false);
+                setConPasswordFocus(false);
+                setShowConPassword(false);
+              }}
+            />
+          </View>
+          {/* phone end */}
 
-        {/* password start */}
-        <View style={styles.inputout}>
-          <MaterialCommunityIcons
-            name="lock-outline"
-            size={24}
-            color={passwordFocus === true ? colors.text1 : colors.text2}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Password"
-            onFocus={() => {
-              setNameFocus(false);
-              setEmailFocus(false);
-              setPhoneFocus(false);
-              setPasswordFocus(true);
-              setConPasswordFocus(false);
-            }}
-            secureTextEntry={showPassword === false ? true : false}
-          />
-          <Octicons
-            name={showPassword === false ? 'eye-closed' : 'eye'}
-            size={24}
-            color={colors.text2}
-            onPress={() => {
-              setShowPassword(!showPassword);
-            }}
-          />
-        </View>
-        {/* password end */}
+          {/* password start */}
+          <View style={styles.inputout}>
+            <MaterialCommunityIcons
+              name="lock-outline"
+              size={24}
+              color={passwordFocus === true ? colors.text1 : colors.text2}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Password"
+              onFocus={() => {
+                setNameFocus(false);
+                setEmailFocus(false);
+                setPhoneFocus(false);
+                setPasswordFocus(true);
+                setConPasswordFocus(false);
+              }}
+              secureTextEntry={showPassword === false ? true : false}
+            />
+            <Octicons
+              name={showPassword === false ? 'eye-closed' : 'eye'}
+              size={24}
+              color={colors.text2}
+              onPress={() => {
+                setShowPassword(!showPassword);
+              }}
+            />
+          </View>
+          {/* password end */}
 
-        {/* confirm password start */}
-        <View style={styles.inputout}>
-          <MaterialCommunityIcons
-            name="lock-outline"
-            size={24}
-            color={conPasswordFocus === true ? colors.text1 : colors.text2}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Confirm Password"
-            onFocus={() => {
-              setNameFocus(false);
-              setEmailFocus(false);
-              setPhoneFocus(false);
-              setConPasswordFocus(true);
-              setPasswordFocus(false);
-            }}
-            secureTextEntry={showConPassword === false ? true : false}
-          />
-          <Octicons
-            name={showConPassword === false ? 'eye-closed' : 'eye'}
-            size={24}
-            color={colors.text2}
-            onPress={() => {
-              setShowConPassword(!showConPassword);
-            }}
-          />
-        </View>
-        {/* confirm password end */}
+          {/* confirm password start */}
+          <View style={styles.inputout}>
+            <MaterialCommunityIcons
+              name="lock-outline"
+              size={24}
+              color={conPasswordFocus === true ? colors.text1 : colors.text2}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Confirm Password"
+              onFocus={() => {
+                setNameFocus(false);
+                setEmailFocus(false);
+                setPhoneFocus(false);
+                setConPasswordFocus(true);
+                setPasswordFocus(false);
+              }}
+              secureTextEntry={showConPassword === false ? true : false}
+            />
+            <Octicons
+              name={showConPassword === false ? 'eye-closed' : 'eye'}
+              size={24}
+              color={colors.text2}
+              onPress={() => {
+                setShowConPassword(!showConPassword);
+              }}
+            />
+          </View>
+          {/* confirm password end */}
 
-        {/* address start */}
-        <Text style={styles.address}>Please enter your address</Text>
-        <View style={styles.inputout}>
-          <TextInput
-            style={styles.input}
-            placeholder="Enter your address"
-            onFocus={() => {
-              setNameFocus(false);
-              setEmailFocus(false);
-              setPhoneFocus(false);
-              setPasswordFocus(false);
-              setShowPassword(false);
-              setConPasswordFocus(false);
-              setShowConPassword(false);
-            }}
-          />
-        </View>
-        {/* address end */}
+          {/* address start */}
+          <Text style={styles.address}>Please enter your address</Text>
+          <View style={styles.inputout}>
+            <TextInput
+              style={styles.input}
+              placeholder="Enter your address"
+              onFocus={() => {
+                setNameFocus(false);
+                setEmailFocus(false);
+                setPhoneFocus(false);
+                setPasswordFocus(false);
+                setShowPassword(false);
+                setConPasswordFocus(false);
+                setShowConPassword(false);
+              }}
+            />
+          </View>
+          {/* address end */}
 
-        <TouchableOpacity style={[btn1, { marginVertical: 10 }]}>
-          <Text
-            style={{
-              color: colors.col1,
-              fontSize: titles.btntxt,
-              fontWeight: 'bold',
-            }}
-          >
-            Sign up
-          </Text>
-        </TouchableOpacity>
-
-        <Text style={styles.or}>OR</Text>
-        <Text style={styles.gftxt}>Sign In With</Text>
-
-        <View style={styles.gf}>
-          <TouchableOpacity>
-            <View style={styles.gficon}>
-              <AntDesign name="google" size={24} color="#EA4335" />
-            </View>
+          <TouchableOpacity style={[btn1, { marginVertical: 10 }]}>
+            <Text
+              style={{
+                color: colors.col1,
+                fontSize: titles.btntxt,
+                fontWeight: 'bold',
+              }}
+            >
+              Sign up
+            </Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.gficon}>
-              <FontAwesome5 name="facebook-f" size={24} color="#4267B2" />
-            </View>
-          </TouchableOpacity>
-        </View>
 
-        <View style={hr80} />
+          <Text style={styles.or}>OR</Text>
+          <Text style={styles.gftxt}>Sign In With</Text>
 
-        <Text style={{ fontSize: 16 }}>
-          Already have an account?
-          <Text
-            style={styles.signup}
-            onPress={() => navigation.navigate('Login')}
-          >
-            {' '}
-            Sign In
+          <View style={styles.gf}>
+            <TouchableOpacity>
+              <View style={styles.gficon}>
+                <AntDesign name="google" size={24} color="#EA4335" />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <View style={styles.gficon}>
+                <FontAwesome5 name="facebook-f" size={24} color="#4267B2" />
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          <View style={hr80} />
+
+          <Text style={{ fontSize: 16 }}>
+            Already have an account?
+            <Text
+              style={styles.signup}
+              onPress={() => navigation.navigate('Login')}
+            >
+              {' '}
+              Sign In
+            </Text>
           </Text>
-        </Text>
-      </SafeAreaView>
-    </ScrollView>
+        </SafeAreaView>
+      </ScrollView>
+    </>
   );
 };
 

@@ -2,36 +2,40 @@ import React from 'react';
 import {
   Image,
   SafeAreaView,
+  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from 'react-native';
-import logo from '../../../assets/favicon.png';
+import logo from '../../../assets/welcomeImage.png';
 import { colors, hr80 } from '../../global/style';
 
 const WelcomeScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={[styles.container]}>
-      <Text style={styles.title}>Welcome to BiteSquare Go</Text>
-      <View style={styles.logoout}>
-        <Image source={logo} style={styles.logo}></Image>
-      </View>
-      <View style={hr80} />
-      <Text style={styles.text}>
-        Find the best food around you at lowest price.
-      </Text>
-      <View style={hr80} />
+    <>
+      <StatusBar backgroundColor="#ff4242" barStyle="dark-content" />
+      <SafeAreaView style={[styles.container]}>
+        <Text style={styles.title}>Welcome to BiteSquare Go</Text>
+        <View style={styles.logoout}>
+          <Image source={logo} style={styles.logo}></Image>
+        </View>
+        <View style={hr80} />
+        <Text style={styles.text}>
+          Find the best food around you at lowest price.
+        </Text>
+        <View style={hr80} />
 
-      <View style={styles.btnout}>
-        <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
-          <Text style={styles.btn}>Sign Up</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.btn}>Sign In</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+        <View style={styles.btnout}>
+          <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
+            <Text style={styles.btn}>Sign Up</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+            <Text style={styles.btn}>Sign In</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
+    </>
   );
 };
 

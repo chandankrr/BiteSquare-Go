@@ -75,6 +75,9 @@ const styles = StyleSheet.create({
     width: '95%',
     elevation: 10,
     borderRadius: 10,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   head: {
     color: colors.text1,

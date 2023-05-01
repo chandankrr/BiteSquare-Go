@@ -27,3 +27,17 @@ export const hr80 = {
   borderBottomWidth: 1,
   marginVertical: 20,
 };
+
+export const veg = {
+  width: 20,
+  height: 20,
+  borderRadius: 50,
+  backgroundColor: 'green',
+};
+
+export const nonveg = {
+  width: 20,
+  height: 20,
+  borderRadius: 50,
+  backgroundColor: 'red',
+};
