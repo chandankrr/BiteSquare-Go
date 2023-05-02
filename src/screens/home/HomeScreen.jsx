@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import {
   FlatList,
   SafeAreaView,
-  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
@@ -38,57 +37,60 @@ const HomeScreen = () => {
 
   const [search, setSearch] = useState('');
 
+  const renderSearchResult = ({ item }) => {
+    if (item.foodName.toLowerCase().includes(search.toLocaleLowerCase())) {
+      return (
+        <View style={styles.searchresult}>
+          <AntDesign name="arrowright" size={24} color="black" />
+          <Text style={styles.searchresulttext}>{item.foodName}</Text>
+        </View>
+      );
+    }
+    return null;
+  };
+
   return (
     <>
       <StatusBar backgroundColor="#f2f2f2" barStyle="dark-content" />
       <SafeAreaView style={[styles.container]}>
         <HomeHeadNav />
-        <ScrollView>
-          <View style={styles.searchbox}>
-            <AntDesign
-              name="search1"
-              size={24}
-              color="black"
-              style={styles.searchicon}
-            />
-            <TextInput
-              placeholder="search"
-              style={styles.input}
-              onChangeText={(text) => {
-                setSearch(text);
-              }}
-            />
-          </View>
-          {search != '' && (
-            <View style={styles.searchresultsouter}>
-              <FlatList
-                style={styles.searchresultsinner}
-                data={foodData}
-                renderItem={({ item }) => {
-                  if (
-                    item.foodName
-                      .toLowerCase()
-                      .includes(search.toLocaleLowerCase())
-                  ) {
-                    return (
-                      <View style={styles.searchresult}>
-                        <AntDesign name="arrowright" size={24} color="black" />
-                        <Text style={styles.searchresulttext}>
-                          {item.foodName}
-                        </Text>
-                      </View>
-                    );
-                  }
-                }}
-              />
-            </View>
-          )}
-          <Categories />
-          <OfferSlider />
-          <CardSlider title="Today's Special" data={foodData} />
-          <CardSlider title="Non-Veg love" data={nonVegData} />
-          <CardSlider title="Veg Hunger" data={vegData} />
-        </ScrollView>
+        <FlatList
+          data={foodData}
+          renderItem={({ item }) => <></>}
+          ListHeaderComponent={
+            <>
+              <View style={styles.searchbox}>
+                <AntDesign
+                  name="search1"
+                  size={24}
+                  color="black"
+                  style={styles.searchicon}
+                />
+                <TextInput
+                  placeholder="search"
+                  style={styles.input}
+                  onChangeText={(text) => {
+                    setSearch(text);
+                  }}
+                />
+              </View>
+              {search !== '' && (
+                <View style={styles.searchresultsouter}>
+                  <FlatList
+                    style={styles.searchresultsinner}
+                    data={foodData}
+                    renderItem={renderSearchResult}
+                  />
+                </View>
+              )}
+              <Categories />
+              <OfferSlider />
+              <CardSlider title="Today's Special" data={foodData} />
+              <CardSlider title="Non-Veg love" data={nonVegData} />
+              <CardSlider title="Veg Hunger" data={vegData} />
+            </>
+          }
+        />
       </SafeAreaView>
     </>
   );
