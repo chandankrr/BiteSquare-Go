@@ -19,30 +19,30 @@ Introducing BiteSquare Go, a cutting-edge food delivery app designed for a seaml
 React, CSS, React-Native, Firebase
 
 ## Screenshots
-Welcome Screen            |  Login Screen
-:-------------------------:|:-------------------------:
-![01](https://github.com/chandankrr/BiteSquare-Go/assets/87066174/3b8c57ca-2933-4d2e-8bd3-b6c7aa65be94)  |  ![02](https://github.com/chandankrr/BiteSquare-Go/assets/87066174/c837fef6-4bdf-43af-b466-f9940c7a9306)
+<kbd>
+  <img src="https://github.com/chandankrr/BiteSquare-Go/assets/87066174/8b45538d-e7c7-420b-b455-28b02985e61b" />
+</kbd>
 
 <br/>
 <br/>
 
-Home Screen: Sliders            |  Home Screen: Food Categories
-:-------------------------:|:-------------------------:
-![03](https://github.com/chandankrr/BiteSquare-Go/assets/87066174/1498a0d3-d74d-4624-9098-ebb123493bab) | ![04](https://github.com/chandankrr/BiteSquare-Go/assets/87066174/c63683d0-cb78-41b3-8036-a6c6e0265d5b)
+<kbd>
+  <img src="https://github.com/chandankrr/BiteSquare-Go/assets/87066174/baf38c37-6075-4706-a10b-d973d8420056" />
+</kbd>
 
 <br/>
 <br/>
 
-Admin Panel: Order Section             
-:-------------------------:
-![05](https://github.com/chandankrr/BiteSquare-Go/assets/87066174/ca2e90f8-c250-4522-a98b-af76417c413b)
+<kbd>
+  <img src="https://github.com/chandankrr/BiteSquare-Go/assets/87066174/ca2e90f8-c250-4522-a98b-af76417c413b" />
+</kbd>
 
 <br/>
 <br/>
 
-Admin Panel: Add Food Section           
-:-------------------------:
-![06](https://github.com/chandankrr/BiteSquare-Go/assets/87066174/943e1fa1-e4bc-4e78-9eac-8eb867542291)
+<kbd>
+  <img src="https://github.com/chandankrr/BiteSquare-Go/assets/87066174/943e1fa1-e4bc-4e78-9eac-8eb867542291" />
+</kbd>
 
 
 
